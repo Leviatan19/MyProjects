@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main() 
 {
 	int wybor= 0; 								/// zmienna dla pierwszego switcha
-	char filler='1'; 							/// zmienna, która wype³ni tablicê wyborów
+	char filler='1'; 							/// zmienna, ktÃ³ra wypeÅ‚ni tablicÄ™ wyborÃ³w
 	string plansza[3][3]; 						/// plansza do gry
-	string pozycje[3][3];						/// plansza, oznaczaj¹ca wolne pola
-	string kolo_czy_krzyzyk[2];					/// tablica przechowuj¹ca "X" i "O"
-	for(int i=0; i<3; i++)						/// wype³nienie obu tablic
+	string pozycje[3][3];						/// plansza, oznaczajÄ…ca wolne pola
+	string kolo_czy_krzyzyk[2];					/// tablica przechowujÄ…ca "X" i "O"
+	for(int i=0; i<3; i++)						/// wypeÅ‚nienie obu tablic
 	{
 		for(int j=0; j<3; j++)
 		{
@@ -18,7 +18,7 @@ int main()
 		}
 	}
 	cout<<"Witaj w grze kolko i krzyzyk"<<endl<<"1. Graj"<<endl<<"2. Wyjdz"<<endl;
-	cin>>wybor;									/// rozpoczêcie gry, lub brak rozpoczêcia
+	cin>>wybor;									/// rozpoczÄ™cie gry, lub brak rozpoczÄ™cia
 	switch(wybor)
 	{
 		case 2:
@@ -29,12 +29,12 @@ int main()
 			cout<<"To grajmy"<<endl;
 			break;
 	}
-	int tura_gracza=0, tura_przeciwnika = 0;	/// zmienne do liczenia tur, zmienna okreœlaj¹ca czy ktoœ wygra³, zmienna przechowuj¹ca "X" lub "O" w zale¿noœci od gracza oraz zmienna do drugiego switcha
+	int tura_gracza=0, tura_przeciwnika = 0;	/// zmienne do liczenia tur, zmienna okreÅ›lajÄ…ca czy ktoÅ› wygraÅ‚, zmienna przechowujÄ…ca "X" lub "O" w zaleÅ¼noÅ›ci od gracza oraz zmienna do drugiego switcha
 	int wygrana = 0;
 	string znak="";
 	int wybor2 = 0;
 	cout<<"Graczu nr 1, co wybierasz? Kolko czy krzyzyk?"<<endl<<"1. Kolko"<<endl<<"2. Krzyzyk"<<endl;
-	cin>>wybor2; 								/// wybór przez gracza pierwszego "X" lub "O"
+	cin>>wybor2; 								/// wybÃ³r przez gracza pierwszego "X" lub "O"
 	switch(wybor2)
 	{
 		case 1:
@@ -50,7 +50,7 @@ int main()
 	while (wygrana == 0)
 	{
 		if(wygrana == 0 && tura_gracza + tura_przeciwnika == 9){
-				cout<<"Remis"<<endl; 			/// w przypadku gdy nikt nie wygra³, mamy remis
+				cout<<"Remis"<<endl; 			/// w przypadku gdy nikt nie wygraÅ‚, mamy remis
 				break;
 			}
 		if (tura_gracza == tura_przeciwnika)
@@ -65,7 +65,7 @@ int main()
 			cout<<"Tura gracza nr 2"<<endl;
 			znak = kolo_czy_krzyzyk[1];
 		}
-		int filler2=0;							/// zmienna, która okreœla numer pola(dla tablicy pozycje)
+		int filler2=0;							/// zmienna, ktÃ³ra okreÅ›la numer pola(dla tablicy pozycje)
 		for(int i=0; i<3; i++)
 		{
 			for(int j=0; j<3; j++)
@@ -88,9 +88,9 @@ int main()
 		cin>>filler2;
 		while(filler2 < 1 || filler2>9)
 		{
-			cin>>filler2;						/// obs³uga b³êdnego wybrania pola(liczba z poza zakresu od 1 do 9)
+			cin>>filler2;						/// obsÅ‚uga bÅ‚Ä™dnego wybrania pola(liczba z poza zakresu od 1 do 9)
 		}
-		int d1, d2 = 0;							/// interpretacja wpisanego numeru pola na pozycjê w tablicy
+		int d1, d2 = 0;							/// interpretacja wpisanego numeru pola na pozycjÄ™ w tablicy
 		d1 = filler2 / 3;
 		if (filler2 % 3 == 0)
 		{
@@ -109,7 +109,7 @@ int main()
 		{
 			d2 = 2;
 		}
-		if(	pozycje[d1][d2] == ".")				/// w przypadku gdy pole zosta³o ju¿ wykorzystane(jest na nim .), to gracz musi wybraæ inne pole
+		if(	pozycje[d1][d2] == ".")				/// w przypadku gdy pole zostaÅ‚o juÅ¼ wykorzystane(jest na nim .), to gracz musi wybraÄ‡ inne pole
 		{
 			cout<<"To pole jest zajete, wybierz inne"<<endl;
 			if (tura_gracza > tura_przeciwnika)
@@ -124,12 +124,12 @@ int main()
 		}
 		else
 		{
-			pozycje[d1][d2] = ".";				/// jeœli pole jest poprawne, na planszy zostanie umieszczony znak ("X" lub "O"), a na tablicy pozycji cyfra zostanie zast¹piona kropk¹
+			pozycje[d1][d2] = ".";				/// jeÅ›li pole jest poprawne, na planszy zostanie umieszczony znak ("X" lub "O"), a na tablicy pozycji cyfra zostanie zastÄ…piona kropkÄ…
 			plansza[d1][d2] = znak;
 		}
 		if (tura_gracza > 2 && tura_przeciwnika > 1 && (tura_gracza + tura_przeciwnika) < 10) ///kiedy minie przynajmniej 5 tur
 		{
-			int numer_gracza = 0;				/// gracz nr 1 rozpoczyna³, a przeciwnikiem by³ gracz nr 2
+			int numer_gracza = 0;				/// gracz nr 1 rozpoczynaÅ‚, a przeciwnikiem byÅ‚ gracz nr 2
 			if ((tura_gracza + tura_przeciwnika)% 2 == 0)
 			{
 				numer_gracza = 2;
@@ -138,7 +138,7 @@ int main()
 			{
 				numer_gracza = 1;
 			}
-			if (plansza[0][2] == znak)			/// opisanie wszystkich mo¿liwych kombinacji wygrywaj¹cych i wybór zwyciêzcy(w przypadku braku takiej kombinacji po wykonaniu 9 ruchów nast¹pi remis)
+			if (plansza[0][2] == znak)			/// opisanie wszystkich moÅ¼liwych kombinacji wygrywajÄ…cych i wybÃ³r zwyciÄ™zcy(w przypadku braku takiej kombinacji po wykonaniu 9 ruchÃ³w nastÄ…pi remis)
 			{
 				if(plansza[0][2] == plansza[1][2] && plansza[1][2] == plansza[2][2] )
 				{
