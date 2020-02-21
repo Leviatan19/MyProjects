@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main() 
+int main()
 {
 	int wybor= 0; 								/// zmienna dla pierwszego switcha
 	char filler='1'; 							/// zmienna, która wypełni tablicę wyborów
