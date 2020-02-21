@@ -41,10 +41,10 @@ def maks(tablica):              # funkcja maksimum zwraca indeks z tablicy, któ
             maksimum=x
     return tablica.index(maksimum)
   
-plik=open('tekst2.txt', 'r')    # wczytanie obu plików i zliczenie wszystkich liter z obu plików
+plik=open('tekst2.txt', encoding="utf8")    # wczytanie obu plików i zliczenie wszystkich liter z obu plików
 tekst2=plik.read()
 ile2=zlicz(tekst2)
-plik=open('lalka.txt', 'r')
+plik=open('lalka.txt', encoding="utf8")
 lalka=plik.read().upper()
 ile=zlicz(lalka)
 
